@@ -30,7 +30,7 @@ class DataTransformation:
             numerical_columns=["writing_score","reading_score"]
             categorical_columns=[
                 "gender",
-                "race_ethinicity",
+                "race_ethnicity",
                 "parental_level_of_education",
                 "lunch",
                 "test_preparation_course",
@@ -49,7 +49,7 @@ class DataTransformation:
                 steps=[
                     ("imputer",SimpleImputer(strategy="most_frequent")),
                     ("one_hot_encoder",OneHotEncoder()),
-                    ("scaler",StandardScaler())
+                    ("scaler",StandardScaler(with_mean=False))
                 ]
             )
 
